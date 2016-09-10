@@ -9,7 +9,7 @@
     <layer-tree-layer expanded="0" checked="Qt::Checked" id="countries20160903162230262" name="countries">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="earth_countries_any20160903143028231" name="countries_shapeburst">
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="countries20160910105437623" name="countries_shapeburst">
       <customproperties/>
     </layer-tree-layer>
   </layer-tree-group>
@@ -38,6 +38,7 @@
     </destinationsrs>
     <rendermaptile>0</rendermaptile>
     <layer_coordinate_transform_info>
+      <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="countries20160910105437623"/>
       <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="earth_countries_any20160903143028231"/>
       <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="places20160903164057641"/>
       <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="earth_countries_any20160903143605360"/>
@@ -47,9 +48,9 @@
   </mapcanvas>
   <layer-tree-canvas>
     <custom-order enabled="0">
-      <item>earth_countries_any20160903143028231</item>
       <item>countries20160903162230262</item>
       <item>places20160903164057641</item>
+      <item>countries20160910105437623</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -65,7 +66,7 @@
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="countries_shapeburst" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="earth_countries_any20160903143028231" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="countries20160910105437623" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
@@ -5034,13 +5035,13 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer minimumScale="1" maximumScale="2.5e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
-        <xmin>-180</xmin>
+        <xmin>-179.99999999999997158</xmin>
         <ymin>-90</ymin>
         <xmax>180</xmax>
-        <ymax>83.62359619140630684</ymax>
+        <ymax>83.62359600000007731</ymax>
       </extent>
-      <id>earth_countries_any20160903143028231</id>
-      <datasource>./naturalearth.sqlite|layername=countries</datasource>
+      <id>countries20160910105437623</id>
+      <datasource>dbname='./naturalearth.sqlite' table="countries" (geom) sql=</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5057,7 +5058,7 @@ def my_form_open(dialog, layer, feature):
           <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
-      <provider encoding="UTF-8">ogr</provider>
+      <provider encoding="UTF-8">spatialite</provider>
       <previewExpression></previewExpression>
       <vectorjoins/>
       <layerDependencies/>
@@ -5067,6 +5068,9 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name="green">
           <qgis version="2.14.6-Essen" minimumScale="100000" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <edittypes>
+              <edittype widgetv2type="TextEdit" name="id">
+                <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+              </edittype>
               <edittype widgetv2type="TextEdit" name="fips">
                 <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
               </edittype>
@@ -5179,8 +5183,8 @@ def my_form_open(dialog, layer, feature):
               <property key="labeling/dist" value="0"/>
               <property key="labeling/distInMapUnits" value="false"/>
               <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
-              <property key="labeling/drawLabels" value="true"/>
-              <property key="labeling/enabled" value="true"/>
+              <property key="labeling/drawLabels" value="false"/>
+              <property key="labeling/enabled" value="false"/>
               <property key="labeling/fieldName" value="name"/>
               <property key="labeling/fitInPolygonOnly" value="true"/>
               <property key="labeling/fontCapitals" value="0"/>
@@ -5327,14 +5331,14 @@ def my_form_open(dialog, layer, feature):
               </DiagramCategory>
             </SingleCategoryDiagramRenderer>
             <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-            <annotationform>../../../QGISTrainingMaterials</annotationform>
+            <annotationform>/QGISTrainingMaterials</annotationform>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
-            <editform>../../../QGISTrainingMaterials</editform>
+            <editform>/QGISTrainingMaterials</editform>
             <editforminit/>
             <editforminitcodesource>0</editforminitcodesource>
-            <editforminitfilepath>../../../QGISTrainingMaterials</editforminitfilepath>
+            <editforminitfilepath>/QGISTrainingMaterials</editforminitfilepath>
             <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -5364,6 +5368,9 @@ def my_form_open(dialog, layer, feature):
         </map-layer-style>
       </map-layer-style-manager>
       <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="fips">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -5623,14 +5630,14 @@ def my_form_open(dialog, layer, feature):
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform>../../../QGISTrainingMaterials</annotationform>
+      <annotationform>/QGISTrainingMaterials</annotationform>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions/>
-      <editform>../../../QGISTrainingMaterials</editform>
+      <editform>/QGISTrainingMaterials</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>../../../QGISTrainingMaterials</editforminitfilepath>
+      <editforminitfilepath>/QGISTrainingMaterials</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -6305,8 +6312,8 @@ def my_form_open(dialog, layer, feature):
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
-        <value>earth_countries_any20160903143028231</value>
         <value>countries20160903162230262</value>
+        <value>places20160903164057641</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
