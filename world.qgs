@@ -71,7 +71,7 @@
     </legendlayer>
   </legend>
   <projectlayers>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>-179.99999999999997158</xmin>
         <ymin>-90</ymin>
@@ -4957,7 +4957,7 @@ def my_form_open(dialog, layer, feature):
         <selectedonly on=""/>
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="0">
           <fontProperties description="Ubuntu,9,-1,5,50,0,0,0,0,0" style=""/>
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
@@ -4965,7 +4965,19 @@ def my_form_open(dialog, layer, feature):
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
       <annotationform>.</annotationform>
       <excludeAttributesWMS/>
-      <excludeAttributesWFS/>
+      <excludeAttributesWFS>
+        <attribute>iso2</attribute>
+        <attribute>subregion</attribute>
+        <attribute>iso3</attribute>
+        <attribute>region</attribute>
+        <attribute>lon</attribute>
+        <attribute>fips</attribute>
+        <attribute>lat</attribute>
+        <attribute>un</attribute>
+        <attribute>pop2005</attribute>
+        <attribute>area</attribute>
+        <attribute>pop_est</attribute>
+      </excludeAttributesWFS>
       <attributeactions/>
       <editform>.</editform>
       <editforminit/>
@@ -6274,6 +6286,9 @@ def my_form_open(dialog, layer, feature):
     <WMSAccessConstraints type="QString">None</WMSAccessConstraints>
     <WMSContactMail type="QString">tudor.barascu@qtibia.ro</WMSContactMail>
     <WMSImageQuality type="int">90</WMSImageQuality>
+    <WFSLayersPrecision>
+      <countries20160903162230262 type="int">5</countries20160903162230262>
+    </WFSLayersPrecision>
     <WMSRestrictedComposers type="QStringList"/>
     <WMSServiceTitle type="QString">QGIS Server Demo</WMSServiceTitle>
     <PAL>
@@ -6290,9 +6305,15 @@ def my_form_open(dialog, layer, feature):
     </PAL>
     <WMSContactPhone type="QString"></WMSContactPhone>
     <WFSTLayers>
-      <Insert type="QStringList"/>
-      <Update type="QStringList"/>
-      <Delete type="QStringList"/>
+      <Insert type="QStringList">
+        <value>countries20160903162230262</value>
+      </Insert>
+      <Update type="QStringList">
+        <value>countries20160903162230262</value>
+      </Update>
+      <Delete type="QStringList">
+        <value>countries20160903162230262</value>
+      </Delete>
     </WFSTLayers>
     <WCSLayers type="QStringList"/>
     <WMSRestrictedLayers type="QStringList"/>
@@ -6300,7 +6321,7 @@ def my_form_open(dialog, layer, feature):
     <Macros>
       <pythonCode type="QString"></pythonCode>
     </Macros>
-    <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+    <WMSAddWktGeometry type="bool">true</WMSAddWktGeometry>
     <WCSUrl type="QString"></WCSUrl>
     <WMSOnlineResource type="QString"></WMSOnlineResource>
     <WMSPrecision type="QString">8</WMSPrecision>
@@ -6370,7 +6391,9 @@ def my_form_open(dialog, layer, feature):
       <Ellipsoid type="QString">WGS84</Ellipsoid>
     </Measure>
     <WMSServiceAbstract type="QString">This is a simple World map that showcases QGIS Server capabilities.</WMSServiceAbstract>
-    <WFSLayers type="QStringList"/>
+    <WFSLayers type="QStringList">
+      <value>countries20160903162230262</value>
+    </WFSLayers>
     <WFSUrl type="QString"></WFSUrl>
     <WMSServiceCapabilities type="bool">true</WMSServiceCapabilities>
     <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
